@@ -12,9 +12,9 @@ function App() {
 
   return (
     <div id="app" className="fixed h-full w-full overflow-auto">
-      {/* <Region onSubmit={(region)=>handleRegionSubmit}/> */}
-      {/* <Scores/> */}
-      <Prediction/>
+      <Region onSubmit={(region)=>handleRegionSubmit}/>
+      {/* <Scores/>
+      <Prediction/> */}
     </div>
   );
 }

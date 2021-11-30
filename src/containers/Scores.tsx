@@ -1,4 +1,5 @@
 import AppButton from "../components/AppButton";
+import Separator from "../components/Separator";
 
 function Scores() {
   const subjects = [
@@ -39,7 +40,7 @@ function Scores() {
         ))}
       </div>
       <div className="flex justify-center mt-4"><AppButton text="Recommended course" onClick={()=>{}} className="w-full md:w-auto"/></div>
-      <div className="w-full separator text-gray-300 text-sm font-bold mt-10">OR</div>
+      <Separator className="text-gray-300 text-sm font-bold mt-10 w-full">OR</Separator>
       <div className="flex flex-col md:flex-row mt-8">
         <img src="/img/abstrakt-design.png" alt="abstrakt-design" className="block md:hidden w-36"/>
         <div className="flex-1 md:mt-0 mt-6">
