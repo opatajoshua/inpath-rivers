@@ -9,6 +9,9 @@ module.exports = {
         'app-gray-item-bg': '#EFEFEF',
         'app-gray-item-text': '#ADADAD',
         'app-black': '#131313',
+        'app-green-bg': '#27AE601A',
+        'app-green-text-1': '#27AE60',
+        'app-green-text-2': '#00BD58',
       },
       rotate:{
         '135': '135deg',
@@ -28,5 +31,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }
