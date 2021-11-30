@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Region from './containers/Region';
+import Scores from './containers/Scores';
+import RegionInterface from './models/RegionInterface';
 
 function App() {
+
+  function handleRegionSubmit(region: RegionInterface){
+
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link bg-red-400"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="app" className="fixed h-full w-full overflow-auto">
+      {/* <Region onSubmit={(region)=>handleRegionSubmit}/> */}
+      <Scores/>
     </div>
   );
 }
