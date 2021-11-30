@@ -1,6 +1,6 @@
 import AppButton from "../components/AppButton";
 
-function Prediction() {
+function Prediction(props: { onDone: () => void}) {
   const courses =[
     {
       "id": 1,
@@ -89,7 +89,7 @@ function Prediction() {
         )}
       </div>
       {/* Done */}
-      <div className="flex justify-center mt-10 md:mt-16"><AppButton text="Done" className="w-full max-w-md" onClick={()=>{}}/></div>
+      <div className="flex justify-center mt-10 md:mt-16"><AppButton text="Done" className="w-full max-w-md" onClick={props.onDone}/></div>
     </div>
   );
 }
