@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Inpath RIVERS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my submission to the react.js code challenge by Inpath.
 
 ## Available Scripts
 
