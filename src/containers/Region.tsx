@@ -3,6 +3,7 @@ import AppButton from "../components/AppButton";
 import AppSelect from "../components/AppSelect";
 import RegionInterface from "../models/RegionInterface";
 
+/** regions container */
 function Region(props: { onSubmit: (region: RegionInterface) => void }) {
   const [regions, setRegions] = useState<RegionInterface[]>([]);
   const [filteredRegions, setFilteredRegions] = useState<RegionInterface[]>([]);
@@ -31,7 +32,7 @@ function Region(props: { onSubmit: (region: RegionInterface) => void }) {
           <h1 className="text-4xl md:text-5xl font-extrabold mt-6 md:mt-48 md:leading-snug">Get advice on your next educational journey....</h1>
           <div className="max-w-sm">
             <AppSelect<RegionInterface> className="mt-10"
-              valueProp='id' labelProp="regionname"
+              valueProp='id' labelProp="regionname" placeholder="Select Region"
               options={filteredRegions}
               selected ={selectedRegion}
               onChange ={(region)=>setSelectedRegion(region)}

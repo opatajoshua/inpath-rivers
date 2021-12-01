@@ -3,6 +3,7 @@ import AppButton from "../components/AppButton";
 import Separator from "../components/Separator";
 import SubjectInterface from "../models/SubjectInterface";
 
+/** Scores container */
 function Scores(props: { onBack: () => void, onRecommend: () => void }) {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -29,7 +30,7 @@ function Scores(props: { onBack: () => void, onRecommend: () => void }) {
         <span className="ml-3 text-lg font-medium">Back</span>
       </button>
       <p className="text-3xl md:text-5xl font-bold md:leading-snug mt-8">Add your average high school scores</p>
-      <p className="text-gray-700 mt-4">An average of more test scores of a subject better represents your strengths.</p>
+      <p className="text-gray-600 font-medium mt-4">An average of more test scores of a subject better represents your strengths.</p>
       {error && <p className="text-red-600 my-8 text-center">{error}</p>}
       {!isLoaded ? <div className="flex flex-col">
         {Array.from(Array(4).keys()).map((sub, index) => (
@@ -60,7 +61,7 @@ function Scores(props: { onBack: () => void, onRecommend: () => void }) {
         <img src="/img/abstrakt-design.png" alt="abstrakt-design" className="block md:hidden w-36" />
         <div className="flex-1 md:mt-0 mt-6">
           <p className="text-2xl md:text-3xl font-bold md:leading-snug">Assess yourself</p>
-          <p className="text-gray-700 mt-4">Take a quick assessment test to evaluate your strengths and help us provide a more accurate prediction, if you don’t have your scores.</p>
+          <p className="text-gray-600 mt-4 font-medium">Take a quick assessment test to evaluate your strengths and help us provide a more accurate prediction, if you don’t have your scores.</p>
           <div className="flex justify-start mt-8"><AppButton text="Get Started" onClick={() => { }} className="" /></div>
         </div>
         <img src="/img/abstrakt-design.png" alt="abstrakt-design" className="hidden md:block" />
