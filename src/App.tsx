@@ -9,6 +9,8 @@ function App() {
   const [step, setStep] = useState(1)
 
   function handleRegionSubmit(region: RegionInterface) {
+    console.log('this submitted region', region);
+    
     setStep(2)
   }
 
