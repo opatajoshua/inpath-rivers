@@ -1,8 +1,28 @@
+import { useEffect, useState } from "react";
 import AppButton from "../components/AppButton";
 import AppSelect from "../components/AppSelect";
 import RegionInterface from "../models/RegionInterface";
 
 function Region(props: { onSubmit: (region: RegionInterface) => void }) {
+  const [regions, setRegions] = useState<RegionInterface[]>([]);
+  const [filteredRegions, setFilteredRegions] = useState<RegionInterface[]>([]);
+  const [selectedRegion, setSelectedRegion] = useState<RegionInterface|null>(null);
+
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_API_URL}/listregions`)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          setRegions(result.regions);
+          setFilteredRegions(result.regions);
+        },
+        (error) => {
+          // setIsLoaded(true);
+          // setError(error.message);
+        }
+      )
+  }, [])
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 min-h-full w-full">
       <div className="">
@@ -10,8 +30,14 @@ function Region(props: { onSubmit: (region: RegionInterface) => void }) {
           <h3 className="text-3xl md:text-4xl font-extrabold text-app-yellow mt-20 md:mt-10 transform scale-y-75 md:scale-y-85">RIVERS</h3>
           <h1 className="text-4xl md:text-5xl font-extrabold mt-6 md:mt-48 md:leading-snug">Get advice on your next educational journey....</h1>
           <div className="max-w-sm">
-            <AppSelect className="mt-10" />
-            <AppButton className="mt-10 w-full" text="Next" onClick={() => props.onSubmit({} as any)} />
+            <AppSelect<RegionInterface> className="mt-10"
+              valueProp='id' labelProp="regionname"
+              options={filteredRegions}
+              selected ={selectedRegion}
+              onChange ={(region)=>setSelectedRegion(region)}
+              onSearch={(st)=>{setFilteredRegions(regions.filter(fr=>fr.regionname.toLowerCase().includes(st.toLowerCase())))}}
+            />
+            <AppButton className="mt-10 w-full" text="Next" onClick={() => props.onSubmit(selectedRegion!)} disabled={selectedRegion==null} />
           </div>
         </div>
       </div>

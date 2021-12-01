@@ -1,4 +1,4 @@
-export default interface PredictionInterface{
+export default interface CourseInterface{
   id: number;
   coursename: string;
   isrecommended: boolean;

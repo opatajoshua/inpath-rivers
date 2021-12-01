@@ -14,9 +14,9 @@ function App() {
 
   return (
     <div id="app" className="fixed h-full w-full overflow-auto">
-      {step == 1 && <Region onSubmit={(region) => handleRegionSubmit(region)} />}
-      {step == 2 && <Scores onBack={()=>setStep(1)} onRecommend={()=>setStep(3)}/>}
-      {step == 3 && <Prediction onDone={()=>setStep(1)}/>}
+      {step === 1 && <Region onSubmit={(region) => handleRegionSubmit(region)} />}
+      {step === 2 && <Scores onBack={()=>setStep(1)} onRecommend={()=>setStep(3)}/>}
+      {step === 3 && <Prediction onDone={()=>setStep(1)}/>}
     </div>
   );
 }
