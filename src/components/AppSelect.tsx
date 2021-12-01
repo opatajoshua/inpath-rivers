@@ -49,7 +49,7 @@ function AppSelect<T>(props: AppSelectProps<T>) {
 
   const itemLabel = function (label: string, selected: boolean) {
     return <>
-      <span className={`font-normal block truncate ${selected ? 'font-bold' : ''}`}>{label}</span>
+      <span className={`font-medium text-gray-600 block truncate ${selected ? 'font-bold' : ''}`}>{label}</span>
       {selected && <span className="text-amber-600 absolute inset-y-0 left-0 flex items-center pl-3">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 text-yellow-700" aria-hidden="true"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
         </svg>
@@ -59,8 +59,8 @@ function AppSelect<T>(props: AppSelectProps<T>) {
 
   return (
     <div className={`relative ${props.className}`}>
-      <button className="flex items-center bg-app-gray-item-bg text-app-gray-item-text rounded-full px-5 h-12 text-left w-full" onClick={() => setOpen(!open)}>
-        <span className="flex-1">{props.selected ? props.selected[props.labelProp] : (props.placeholder || 'Select an option')}</span>
+      <button className="flex items-center bg-app-gray-item-bg  rounded-full px-5 h-12 text-left w-full" onClick={() => setOpen(!open)}>
+        <span className={`flex-1 font-medium ${props.selected!=null? 'text-gray-600':'text-app-gray-item-text'}`}>{props.selected ? props.selected[props.labelProp] : (props.placeholder || 'Select an option')}</span>
         <span style={{
           border: 'solid black',
           borderWidth: ' 0 2px 2px 0',

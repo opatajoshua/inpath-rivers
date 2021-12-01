@@ -7,7 +7,7 @@ interface AppButtonProps extends React.HTMLProps<HTMLButtonElement> {
 
 function AppButton({ text, className, onClick, children, ...props }: AppButtonProps) {
   return (
-    <button className={`${props.disabled?'bg-opacity-40':''} bg-app-yellow rounded-full text-lg font-medium px-12 h-12 hover:${props.disabled?'':'bg-opacity-80'} ${className}`} onClick={onClick} {...props} type='button'>
+    <button className={`${props.disabled?'bg-opacity-40':''} bg-app-yellow rounded-full text-lg font-semibold px-12 h-12 hover:${props.disabled?'':'bg-opacity-80'} ${className}`} onClick={onClick} {...props} type='button'>
       {text}
     </button>
   );
