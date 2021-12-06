@@ -4,7 +4,7 @@ import AppSelect from "../components/AppSelect";
 import RegionInterface from "../models/RegionInterface";
 
 /** regions container */
-function Region(props: { onSubmit: (region: RegionInterface) => void }) {
+function Region(props: { onSubmit: (region: RegionInterface|null) => void }) {
   const [regions, setRegions] = useState<RegionInterface[]>([]);
   const [filteredRegions, setFilteredRegions] = useState<RegionInterface[]>([]);
   const [selectedRegion, setSelectedRegion] = useState<RegionInterface|null>(null);
@@ -38,7 +38,7 @@ function Region(props: { onSubmit: (region: RegionInterface) => void }) {
               onChange ={(region)=>setSelectedRegion(region)}
               onSearch={(st)=>{setFilteredRegions(regions.filter(fr=>fr.regionname.toLowerCase().includes(st.toLowerCase())))}}
             />
-            <AppButton className="mt-10 w-full" text="Next" onClick={() => props.onSubmit(selectedRegion!)} disabled={selectedRegion==null} />
+            <AppButton className="mt-10 w-full" text="Next" onClick={() => props.onSubmit(selectedRegion)}  />
           </div>
         </div>
       </div>

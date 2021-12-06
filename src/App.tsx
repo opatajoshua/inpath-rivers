@@ -8,7 +8,7 @@ import RegionInterface from './models/RegionInterface';
 function App() {
   const [step, setStep] = useState(1)
 
-  function handleRegionSubmit(region: RegionInterface) {
+  function handleRegionSubmit(region: RegionInterface|null) {
     console.log('this submitted region', region);
     
     setStep(2)
