@@ -32,7 +32,7 @@ function Scores(props: { onBack: () => void, onRecommend: () => void }) {
       <p className="text-3xl md:text-5xl font-bold md:leading-snug mt-8">Add your average high school scores</p>
       <p className="text-gray-600 font-medium mt-4">An average of more test scores of a subject better represents your strengths.</p>
       {error && <p className="text-red-600 my-8 text-center">{error}</p>}
-      {!isLoaded ? <div className="flex flex-col">
+      {!isLoaded || error ? <div className="flex flex-col">
         {Array.from(Array(4).keys()).map((sub, index) => (
           <div key={index}>
             {index !== 0 && (<hr />)}

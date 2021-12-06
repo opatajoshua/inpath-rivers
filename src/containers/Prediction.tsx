@@ -54,7 +54,7 @@ function Prediction(props: { onDone: () => void}) {
       </div>
       {error && <p className="text-red-600 my-8 text-center">{error}</p>}
       {/* courses */}
-      {!isLoaded ?
+      {!isLoaded || error ?
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mt-6">
           {Array.from(Array(4).keys()).map((sub, index) => (
             <div className="flex flex-row p-4 md:p-6 border rounded-lg items-center" key={index}>
